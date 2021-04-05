@@ -7,6 +7,40 @@ import scipy
 import scipy.stats as stats
 import matplotlib.colors as mcolors
 
+def sw_betaplane(lat):
+    """
+    
+    Parameters
+    ----------
+    lat : numeric
+        Latitude in degrees.
+
+    Returns
+    -------
+    None.
+
+    Adapted from  Phil Morgan's [93-04-20  (morgan@ml.csiro.au)] sw_f.m  by Tom Farrar (10-26-01).
+    REFERENCE: 
+        S. Pond & G.Pickard  2nd Edition 1986
+        Introductory Dynamical Oceanogrpahy
+        Pergamon Press Sydney.  ISBN 0-08-028728-X
+           
+        A.E. Gill 1982. p.597
+        "Atmosphere-Ocean Dynamics"
+        Academic Press: New York.  ISBN: 0-12-283522-0
+
+
+    # Tom Farrar, 2020, jfarrar@whoi.edu
+    # converted from matlab 2020
+    """
+
+    DEG2RAD = np.pi/180 
+    OMEGA = 7.292e-5      #s-1   A.E.Gill p.597
+    a=6378*10**3;    # equatorial radius in meters, A.E.Gill p.597
+    beta = (1/a)*2*OMEGA*np.cos(lat*DEG2RAD);
+
+    return beta
+
 def confid(alpha,nu):
     """
     Computes the upper and lower 100(1-alpha)% confidence limits for 
