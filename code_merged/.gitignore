@@ -5,8 +5,9 @@ __pycache__/
 # C extensions
 *.so
 
-#Data folder
+#Data and figures folders
 data/
+figures/
 
 # Distribution / packaging
 .Python
