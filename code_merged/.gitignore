@@ -6,8 +6,8 @@ __pycache__/
 *.so
 
 #Data and figures folders
-data/
-figures/
+data/*
+figures/*
 
 # Distribution / packaging
 .Python
